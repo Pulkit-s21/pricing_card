@@ -109,6 +109,16 @@ ul{
   list-style-type: none;
 }
 
+ul li{
+  margin-top: .25em;
+  margin-bottom: 2.25em;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Utility classes */
 
 .padding-inline-400{
@@ -208,11 +218,6 @@ ul{
 }
 
 /* general styling */
-
-ul li{
-  margin-top: .25em;
-  margin-bottom: 2.25em;
-}
 
 .card__area{
   display: grid;
