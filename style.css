@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;800&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  cursor: pointer;  
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Variables */
+
+:root{
+  --clr-accent-400: rgb(220, 122, 97);
+  --clr-primary-400: rgb(56, 82, 97);
+
+  --clr-neutral-100: rgb(255, 255, 255);
+
+  --ff: 'Merriweather Sans', sans-serif;
+
+  --fw-100: 100;
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-800: 800;
+
+  --fs-400: 1rem;
+  --fs-500: 1.25rem;
+  --fs-600: 2rem;
+  --fs-700: 2.75rem;
+  --fs-700: 3rem;
+  --fs-800: 3.5rem;
+  --fs-900: 4rem;
+}
+
+/* global */
+
+ul{
+  list-style-type: none;
+}
+
+/* Utility classes */
+
+.padding-inline-400{
+  padding-inline: 1rem;
+}
+
+.padding-inline-800{
+  padding-inline: 1rem;
+}
+
+.padding-400{
+  padding: 1rem 0;
+}
+
+.margin-400{
+  margin: 3em 0;
+}
+
+.text-uppercase{
+  text-transform: uppercase;
+}
+
+.text-align-center{
+  text-align: center;
+}
+
+.text-align-left{
+  text-align: left;
+}
+
+.text-accent{
+  color: var(--clr-accent-400);
+}
+
+.text-primary{
+  color: var(--clr-primary-400);
+}
+
+.text-neutral{
+  color: var(--clr-neutral-100);
+}
+
+.bg-accent{
+  background-color: var(--clr-accent-400);
+}
+
+.bg-primary{
+  background-color: var(--clr-primary-400);
+}
+
+.bg-neutral{
+  background-color: var(--clr-neutral-100);
+}
+
+.font-family{
+  font-family: var(--ff);
+}
+
+.fw-300{
+  font-weight: 300;
+}
+
+.fw-400{
+  font-weight: 400;
+}
+
+.fw-600{
+  font-weight: 600;
+}
+
+.fw-800{
+  font-weight: 800;
+}
+
+.fs-400{
+  font-size: var(--fs-400);
+}
+
+.fs-500{
+  font-size: var(--fs-500);
+}
+
+.fs-600{
+  font-size: var(--fs-600);
+}
+
+.fs-700{
+  font-size: var(--fs-700);
+}
+
+.fs-800{
+  font-size: var(--fs-800);
+}
+
+.fs-900{
+  font-size: var(--fs-900);
+}
+
+/* general styling */
+
+ul li{
+  margin-top: .25em;
+  margin-bottom: 2.25em;
+}
+
+.card__area{
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+}
+
+.card__body{
+  box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, .2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card__list-area{
+  display: grid;
+  place-items: center;
+  padding: 2em;
+}
+
+.card__button{
+  border: 0;
+  outline: 0;
+  text-transform: uppercase;
+  padding: .75em 1em;
+  border-radius: .35em;
+}
+
+.pricing{
+  width: 100%;
+}
+
+@media screen and (min-width: 48em){
+  .card__area{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media screen and (min-width: 70em){
+  .card__area{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
