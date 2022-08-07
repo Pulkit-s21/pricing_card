@@ -66,14 +66,14 @@ select {
    scroll-behavior: auto;
   }
   
-  *,
+  /* *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
+  } */
 }
 
 
@@ -217,6 +217,14 @@ a{
   font-size: var(--fs-900);
 }
 
+.leftSwing{
+  animation: leftSwing 700ms ease-in-out forwards;
+}
+
+.rightSwing{
+  animation: rightSwing 700ms ease-in-out forwards;
+}
+
 /* general styling */
 
 .card__area{
@@ -229,12 +237,15 @@ a{
   box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, .2);
   border-radius: 8px;
   overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 62.5rem;
 }
 
 .card__list-area{
-  display: grid;
-  place-items: center;
+  /* display: grid;
+  place-items: center; */
   padding: 2em;
+  transform: translateZ(2rem);
 }
 
 .card__button{
@@ -245,18 +256,52 @@ a{
   border-radius: .35em;
 }
 
-.pricing{
-  width: 100%;
+/* animations */
+
+@keyframes leftSwing{
+  0%{
+    transform: translateX(-100%);
+  }
+  75%{
+    transform: translateX(15%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+@keyframes rightSwing{
+  0%{
+    transform: translateX(100%);
+  }
+  75%{
+    transform: translateX(-15%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
 }
 
 @media screen and (min-width: 48em){
   .card__area{
     grid-template-columns: repeat(2,1fr);
   }
+  .rightSwing{
+    animation: none;
+  }
+  .leftSwing{
+    animation: none;
+  }
 }
 
 @media screen and (min-width: 70em){
   .card__area{
     grid-template-columns: repeat(3,1fr);
+  }
+  .rightSwing{
+    animation: none;
+  }
+  .leftSwing{
+    animation: none;
   }
 }
